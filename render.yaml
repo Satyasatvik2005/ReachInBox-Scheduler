@@ -51,10 +51,7 @@ services:
       - key: NODE_VERSION
         value: "18.17.0"
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: reachinbox-backend
-          property: url
+        value: "https://backend-url.onrender.com" # You must manually update this in Render dashboard after the backend deploys!
       - key: NEXT_PUBLIC_GOOGLE_CLIENT_ID
         value: your_google_client_id_here
 
@@ -63,6 +60,7 @@ services:
     name: reachinbox-redis
     region: oregon
     plan: free
+    ipAllowList: []
 
 databases:
   - name: reachinbox-db
